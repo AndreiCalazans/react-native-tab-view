@@ -55,17 +55,17 @@ const Scene = ({ route, position, layout, index, length }: Props) => {
       }
     });
 
-    const translateX = Animated.interpolate(position, {
+    const translateX = Animated.interpolateNode(position, {
       inputRange,
       outputRange: translateOutputRange,
       extrapolate: Animated.Extrapolate.CLAMP,
     });
-    const scale = Animated.interpolate(position, {
+    const scale = Animated.interpolateNode(position, {
       inputRange,
       outputRange: scaleOutputRange,
       extrapolate: Animated.Extrapolate.CLAMP,
     });
-    const opacity = Animated.interpolate(position, {
+    const opacity = Animated.interpolateNode(position, {
       inputRange,
       outputRange: opacityOutputRange,
       extrapolate: Animated.Extrapolate.CLAMP,

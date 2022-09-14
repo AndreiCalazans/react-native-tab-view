@@ -53,11 +53,11 @@ export default class CustomTabBarExample extends React.Component<{}, State> {
   }) => ({ route, index }: { route: Route; index: number }) => {
     const inputRange = navigationState.routes.map((_, i) => i);
 
-    const activeOpacity = Animated.interpolate(position, {
+    const activeOpacity = Animated.interpolateNode(position, {
       inputRange,
       outputRange: inputRange.map((i: number) => (i === index ? 1 : 0)),
     });
-    const inactiveOpacity = Animated.interpolate(position, {
+    const inactiveOpacity = Animated.interpolateNode(position, {
       inputRange,
       outputRange: inputRange.map((i: number) => (i === index ? 0 : 1)),
     });
